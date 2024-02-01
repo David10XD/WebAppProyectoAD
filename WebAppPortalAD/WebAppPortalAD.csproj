@@ -1,0 +1,466 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E7EA8C0-33EF-4F4D-992E-86AEBDED9624}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAppPortalAD</RootNamespace>
+    <AssemblyName>WebAppPortalAD</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44391</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\SendGridMail.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Estilos\assets\css\ace-ie.min.css" />
+    <Content Include="Estilos\assets\css\ace-part2.min.css" />
+    <Content Include="Estilos\assets\css\ace-rtl.min.css" />
+    <Content Include="Estilos\assets\css\ace-skins.min.css" />
+    <Content Include="Estilos\assets\css\ace.min.css" />
+    <Content Include="Estilos\assets\css\bootstrap-colorpicker.min.css" />
+    <Content Include="Estilos\assets\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Estilos\assets\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Estilos\assets\css\bootstrap-duallistbox.min.css" />
+    <Content Include="Estilos\assets\css\bootstrap-editable.min.css" />
+    <Content Include="Estilos\assets\css\bootstrap-multiselect.min.css" />
+    <Content Include="Estilos\assets\css\bootstrap-timepicker.min.css" />
+    <Content Include="Estilos\assets\css\bootstrap.min.css" />
+    <Content Include="Estilos\assets\css\chosen.min.css" />
+    <Content Include="Estilos\assets\css\colorbox.min.css" />
+    <Content Include="Estilos\assets\css\daterangepicker.min.css" />
+    <Content Include="Estilos\assets\css\dropzone.min.css" />
+    <Content Include="Estilos\assets\css\font-awesome.min.css" />
+    <Content Include="Estilos\assets\css\fonts.googleapis.com.css" />
+    <Content Include="Estilos\assets\css\fullcalendar.min.css" />
+    <Content Include="Estilos\assets\css\jquery-ui.css" />
+    <Content Include="Estilos\assets\css\jquery-ui.custom.min.css" />
+    <Content Include="Estilos\assets\css\jquery-ui.min.css" />
+    <Content Include="Estilos\assets\css\jquery.gritter.min.css" />
+    <Content Include="Estilos\assets\css\Login.css" />
+    <Content Include="Estilos\assets\css\prettify.min.css" />
+    <Content Include="Estilos\assets\css\select2.min.css" />
+    <Content Include="Estilos\assets\css\ui.jqgrid.min.css" />
+    <Content Include="Estilos\assets\font-awesome\4.5.0\css\font-awesome.min.css" />
+    <Content Include="Estilos\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Estilos\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Estilos\assets\images\avatars\avatar.png" />
+    <Content Include="Estilos\assets\images\avatars\avatar1.png" />
+    <Content Include="Estilos\assets\images\avatars\avatar2.png" />
+    <Content Include="Estilos\assets\images\avatars\avatar3.png" />
+    <Content Include="Estilos\assets\images\avatars\avatar4.png" />
+    <Content Include="Estilos\assets\images\avatars\avatar5.png" />
+    <Content Include="Estilos\assets\images\avatars\loading.gif" />
+    <Content Include="Estilos\assets\images\avatars\profile-pic.jpg" />
+    <Content Include="Estilos\assets\images\avatars\user.jpg" />
+    <Content Include="Estilos\assets\images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Estilos\assets\images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Estilos\assets\images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Estilos\assets\images\bootstrap-colorpicker\hue.png" />
+    <Content Include="Estilos\assets\images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Estilos\assets\images\email\email1.png" />
+    <Content Include="Estilos\assets\images\email\email2.png" />
+    <Content Include="Estilos\assets\images\email\email3.png" />
+    <Content Include="Estilos\assets\images\email\email4.png" />
+    <Content Include="Estilos\assets\images\gallery\image-1.jpg" />
+    <Content Include="Estilos\assets\images\gallery\image-2.jpg" />
+    <Content Include="Estilos\assets\images\gallery\image-3.jpg" />
+    <Content Include="Estilos\assets\images\gallery\image-4.jpg" />
+    <Content Include="Estilos\assets\images\gallery\image-5.jpg" />
+    <Content Include="Estilos\assets\images\gallery\image-6.jpg" />
+    <Content Include="Estilos\assets\images\gallery\thumb-1.jpg" />
+    <Content Include="Estilos\assets\images\gallery\thumb-2.jpg" />
+    <Content Include="Estilos\assets\images\gallery\thumb-3.jpg" />
+    <Content Include="Estilos\assets\images\gallery\thumb-4.jpg" />
+    <Content Include="Estilos\assets\images\gallery\thumb-5.jpg" />
+    <Content Include="Estilos\assets\images\gallery\thumb-6.jpg" />
+    <Content Include="Estilos\assets\images\intro\fondo.png" />
+    <Content Include="Estilos\assets\images\placeholder\165x90.png" />
+    <Content Include="Estilos\assets\images\placeholder\255x150.png" />
+    <Content Include="Estilos\assets\images\placeholder\530x270.png" />
+    <Content Include="Estilos\assets\images\placeholder\550x280.png" />
+    <Content Include="Estilos\assets\js\ace-editable.min.js" />
+    <Content Include="Estilos\assets\js\ace-elements.min.js" />
+    <Content Include="Estilos\assets\js\ace-extra.min.js" />
+    <Content Include="Estilos\assets\js\ace.min.js" />
+    <Content Include="Estilos\assets\js\autosize.min.js" />
+    <Content Include="Estilos\assets\js\bootbox.js" />
+    <Content Include="Estilos\assets\js\bootstrap-colorpicker.min.js" />
+    <Content Include="Estilos\assets\js\bootstrap-datepicker.min.js" />
+    <Content Include="Estilos\assets\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Estilos\assets\js\bootstrap-editable.min.js" />
+    <Content Include="Estilos\assets\js\bootstrap-markdown.min.js" />
+    <Content Include="Estilos\assets\js\bootstrap-multiselect.min.js" />
+    <Content Include="Estilos\assets\js\bootstrap-tag.min.js" />
+    <Content Include="Estilos\assets\js\bootstrap-timepicker.min.js" />
+    <Content Include="Estilos\assets\js\bootstrap-wysiwyg.min.js" />
+    <Content Include="Estilos\assets\js\bootstrap.min.js" />
+    <Content Include="Estilos\assets\js\buttons.colVis.min.js" />
+    <Content Include="Estilos\assets\js\buttons.flash.min.js" />
+    <Content Include="Estilos\assets\js\buttons.html5.min.js" />
+    <Content Include="Estilos\assets\js\buttons.print.min.js" />
+    <Content Include="Estilos\assets\js\chosen.jquery.min.js" />
+    <Content Include="Estilos\assets\js\dataTables.buttons.min.js" />
+    <Content Include="Estilos\assets\js\dataTables.select.min.js" />
+    <Content Include="Estilos\assets\js\datatables\dataTables.bootstrap.js" />
+    <Content Include="Estilos\assets\js\datatables\jquery-ui.min.js" />
+    <Content Include="Estilos\assets\js\datatables\jquery.dataTables.js" />
+    <Content Include="Estilos\assets\js\datatables\jquery.min.js" />
+    <Content Include="Estilos\assets\js\daterangepicker.min.js" />
+    <Content Include="Estilos\assets\js\dropzone.min.js" />
+    <Content Include="Estilos\assets\js\excanvas.min.js" />
+    <Content Include="Estilos\assets\js\fullcalendar.min.js" />
+    <Content Include="Estilos\assets\js\grid.locale-en.js" />
+    <Content Include="Estilos\assets\js\holder.min.js" />
+    <Content Include="Estilos\assets\js\html5shiv.min.js" />
+    <Content Include="Estilos\assets\js\jquery-1.11.3.min.js" />
+    <Content Include="Estilos\assets\js\jquery-2.1.4.min.js" />
+    <Content Include="Estilos\assets\js\jquery-additional-methods.min.js" />
+    <Content Include="Estilos\assets\js\jquery-typeahead.js" />
+    <Content Include="Estilos\assets\js\jquery-ui.custom.min.js" />
+    <Content Include="Estilos\assets\js\jquery-ui.min.js" />
+    <Content Include="Estilos\assets\js\jquery.bootstrap-duallistbox.min.js" />
+    <Content Include="Estilos\assets\js\jquery.colorbox.min.js" />
+    <Content Include="Estilos\assets\js\jquery.dataTables.bootstrap.min.js" />
+    <Content Include="Estilos\assets\js\jquery.dataTables.min.js" />
+    <Content Include="Estilos\assets\js\jquery.easypiechart.min.js" />
+    <Content Include="Estilos\assets\js\jquery.flot.min.js" />
+    <Content Include="Estilos\assets\js\jquery.flot.pie.min.js" />
+    <Content Include="Estilos\assets\js\jquery.flot.resize.min.js" />
+    <Content Include="Estilos\assets\js\jquery.gritter.min.js" />
+    <Content Include="Estilos\assets\js\jquery.hotkeys.index.min.js" />
+    <Content Include="Estilos\assets\js\jquery.inputlimiter.min.js" />
+    <Content Include="Estilos\assets\js\jquery.jqGrid.min.js" />
+    <Content Include="Estilos\assets\js\jquery.knob.min.js" />
+    <Content Include="Estilos\assets\js\jquery.maskedinput.min.js" />
+    <Content Include="Estilos\assets\js\jquery.min.js" />
+    <Content Include="Estilos\assets\js\jquery.mobile.custom.min.js" />
+    <Content Include="Estilos\assets\js\jquery.nestable.min.js" />
+    <Content Include="Estilos\assets\js\jquery.raty.min.js" />
+    <Content Include="Estilos\assets\js\jquery.sparkline.index.min.js" />
+    <Content Include="Estilos\assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Estilos\assets\js\jquery.validate.min.js" />
+    <Content Include="Estilos\assets\js\markdown.min.js" />
+    <Content Include="Estilos\assets\js\moment.min.js" />
+    <Content Include="Estilos\assets\js\prettify.min.js" />
+    <Content Include="Estilos\assets\js\respond.min.js" />
+    <Content Include="Estilos\assets\js\select2.min.js" />
+    <Content Include="Estilos\assets\js\spin.js" />
+    <Content Include="Estilos\assets\js\spinbox.min.js" />
+    <Content Include="Estilos\assets\js\tree.min.js" />
+    <Content Include="Estilos\assets\js\wizard.min.js" />
+    <Content Include="Estilos\assets\swf\flashExport.swf" />
+    <Content Include="Estilos\js\BuscarDatos.js" />
+    <Content Include="Estilos\js\EjeRPA.js" />
+    <Content Include="Estilos\js\Password.js" />
+    <Content Include="Estilos\js\Preguntas.js" />
+    <Content Include="Estilos\js\Usuario.js" />
+    <Content Include="Estilos\js\Validacion.js" />
+    <Content Include="Estilos\sweetalert\css\sweetalert.css" />
+    <Content Include="Estilos\sweetalert\js\sweetalert.init.js" />
+    <Content Include="Estilos\sweetalert\js\sweetalert.min.js" />
+    <Content Include="Imagenes\ImagenesEmpresas\icono.png" />
+    <Content Include="Imagenes\ImagenesEmpresas\loading.gif" />
+    <Content Include="Imagenes\ImagenesEmpresas\Logo-web.png" />
+    <Content Include="Paginas\ActualizarUsuario.aspx" />
+    <Content Include="Paginas\CambiarPassword.aspx" />
+    <Content Include="Paginas\Consultas.aspx" />
+    <Content Include="Paginas\Dashboard.aspx" />
+    <Content Include="Paginas\DesbloquerUsuario.aspx" />
+    <Content Include="Paginas\DetalleCuenta.aspx" />
+    <Content Include="Paginas\EjecucionRPA.aspx" />
+    <Content Include="Paginas\Login.aspx" />
+    <Content Include="Paginas\RegistrarUsuario.aspx" />
+    <Content Include="Paginas\Reporte.aspx" />
+    <Content Include="Paginas\UsuariosAD.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\EnvioCorreoHelper.cs" />
+    <Compile Include="Clases\ProcesoAcceso.cs" />
+    <Compile Include="Clases\SeguridadHelper.cs" />
+    <Compile Include="Controles\NegCRedireccionamientoLogin.cs" />
+    <Compile Include="Paginas\ActualizarUsuario.aspx.cs">
+      <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\ActualizarUsuario.aspx.designer.cs">
+      <DependentUpon>ActualizarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\CambiarPassword.aspx.cs">
+      <DependentUpon>CambiarPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\CambiarPassword.aspx.designer.cs">
+      <DependentUpon>CambiarPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Consultas.aspx.cs">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Consultas.aspx.designer.cs">
+      <DependentUpon>Consultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\DesbloquerUsuario.aspx.cs">
+      <DependentUpon>DesbloquerUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\DesbloquerUsuario.aspx.designer.cs">
+      <DependentUpon>DesbloquerUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\DetalleCuenta.aspx.cs">
+      <DependentUpon>DetalleCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\DetalleCuenta.aspx.designer.cs">
+      <DependentUpon>DetalleCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\EjecucionRPA.aspx.cs">
+      <DependentUpon>EjecucionRPA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\EjecucionRPA.aspx.designer.cs">
+      <DependentUpon>EjecucionRPA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Index.Master.cs">
+      <DependentUpon>Index.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Index.Master.designer.cs">
+      <DependentUpon>Index.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\RegistrarUsuario.aspx.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\RegistrarUsuario.aspx.designer.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Reporte.aspx.cs">
+      <DependentUpon>Reporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Reporte.aspx.designer.cs">
+      <DependentUpon>Reporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\UsuariosAD.aspx.cs">
+      <DependentUpon>UsuariosAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\UsuariosAD.aspx.designer.cs">
+      <DependentUpon>UsuariosAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ADServicios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\AD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Estilos\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Estilos\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Estilos\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Estilos\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Estilos\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Estilos\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Estilos\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Estilos\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Connected Services\Application Insights\ConnectedService.json" />
+    <Content Include="Paginas\Index.Master" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\solcaapp - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\solcaapp - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\solcaapp - Web Deploy.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ADServicios\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ADServicios\SerWebApp.wsdl" />
+    <None Include="Web References\AD\ActualizarCuentaAD.wsdl" />
+    <None Include="Web References\AD\ActualizarCuentaAD.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\AD\ActualizarCuentaAD0.wsdl" />
+    <None Include="Web References\AD\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.100.10/ConsultarAD/ActualizarCuentaAD.svc%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AD\</RelPath>
+      <UpdateFromURL>http://192.168.100.10/ConsultarAD/ActualizarCuentaAD.svc%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WebAppPortalAD_AD_ActualizarCuentaAD</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://192.168.100.94//WebApp/SerWebApp.svc%3fsingleWsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ADServicios\</RelPath>
+      <UpdateFromURL>http://192.168.100.94//WebApp/SerWebApp.svc%3fsingleWsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WebAppPortalAD_ADServicios_SerWebApp</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{ca2e3c8a-9bc5-4296-9154-bdeeb7365c57}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{4745084f-3e3f-47d5-a535-8a7b10b9885b}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58582</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44391/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:44391/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

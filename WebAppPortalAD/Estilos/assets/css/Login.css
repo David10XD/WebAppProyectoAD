@@ -1,0 +1,6 @@
+﻿body {
+    width: 100%;
+    height: 500px;
+    background-image: url('../images/intro/fondo.png');
+    background-size: cover;
+}

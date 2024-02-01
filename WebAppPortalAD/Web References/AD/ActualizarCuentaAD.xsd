@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://172.16.0.102/" elementFormDefault="qualified" targetNamespace="http://172.16.0.102/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ExtraerDatosUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="server" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dominio" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExtraerDatosUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ExtraerDatosUsuarioResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarContrasenia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="server" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dominio" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Nuevopassword" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Confirpassword" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="EstadoProceso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarContraseniaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="CambiarContraseniaResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DesbloquearUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="server" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dominio" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Carpeta" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="datosUsuarios" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DesbloquearUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="DesbloquearUsuarioResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="server" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dominio" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Carpeta" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="datosUsuarios" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="EstadoProceso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ValidarCuentaResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="server" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dominio" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Carpeta" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="datosUsuarios" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="EstadoProceso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VerUsuarioResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FechaCaducidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="server" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dominio" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FechaCaducidadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="FechaCaducidadResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarUsuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="server" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dominio" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="datosUsuarios" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Carpeta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerarUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GenerarUsuariosResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarUsuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="server" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dominio" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="datosUsuarios" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Carpeta" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="EstadoProceso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ActualizarUsuariosResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarUsuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="server" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="dominio" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="usuario" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="password" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Carpeta" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="EstadoProceso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListarUsuariosResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaUsuarios">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ListaUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListaUsuariosResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaGrupos">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="ListaGruposResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="ListaGruposResult" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
