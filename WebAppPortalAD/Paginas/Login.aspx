@@ -105,7 +105,7 @@
     <script src="../Estilos/sweetalert/js/sweetalert.init.js"></script>
     <script src="../Estilos/js/BuscarDatos.js?v=9"></script>
     <link href="../Estilos/assets/css/Login.css" rel="stylesheet" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="login-layout">
@@ -154,7 +154,14 @@
                                                     </span>
                                                 </label>
                                                 <div class="clearfix">
-                                                    <div class="g-recaptcha" data-sitekey="6Lc583MfAAAAAHMDSxrBs1ROmAEZehGniVhV4u88"></div>
+                                                    
+                                                    
+                                                    
+                                                   <div class="g-recaptcha" data-sitekey="6Lc583MfAAAAAHMDSxrBs1ROmAEZehGniVhV4u88"></div>   
+
+
+
+
                                                 </div>
                                                 <div class="clearfix">
                                                     <asp:Button ID="btn_ingresar" runat="server" Text="Ingresar" CssClass="width-35 pull-right btn btn-sm btn-primary" OnClick="btn_ingresar_Click" data-toggle="modal" data-target="#myModal"></asp:Button>

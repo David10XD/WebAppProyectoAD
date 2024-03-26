@@ -205,61 +205,180 @@ function fillModalData(data) {
     $('.nav-tabs a[href="#Actualiza"]').tab('show');
 }
 
+
+
+/*
 function guardarUsuario() {
-    var res = "";
 
-    var p1 = $("#formUsuario").val();
-    var p2 = $("#formPrimerNombre").val();
-    var p3 = $("#formSegundoNombre").val();
-    var p4 = $("#formPrimerApellido").val();
-    var p5 = $("#formSegundoApellido").val();
-    var p6 = $("#formTelefono").val();
-    var p7 = $("#formEmail").val();
-    var p8 = $("#formfield3").val();
-    var p9 = $("#formCompania").val();
-    var p10 = $("#formDepartamento").val();
-    var p11 = $("#formTitulo").val();
+    if ($("#formfield3").val() == $("#formfield4").val()) {
+        var res = "";
+        var p1 = $("#formSeleccionUsuario").val();
+        var p2 = $("#formPrimerNombre").val();
+        var p3 = $("#formSegundoNombre").val();
+        var p4 = $("#formPrimerApellido").val();
+        var p5 = $("#formSegundoApellido").val();
+        var p6 = $("#formTelefono").val();
+        var p7 = $("#formEmailDominio").val();
+        var p8 = $("#formfield3").val();
+        var p9 = $("#formCompania").val();
+        // var p10 = $("#formDepartamento").val();
+        var comboDepartamento = document.getElementById("formDepartamento");
+        var p10 = comboDepartamento.options[comboDepartamento.selectedIndex].text;
+        var p11 = $("#formTitulo").val();
+        var p12 = $("#formfield3").val();
+        var p13 = $("#formfield4").val();
 
-    var str = p1 + ";" + p2 + ";" + p3 + ";" + p4 + ";" + p5 + ";" + p6 + ";" + p7 + ";" + p8 + ";" + p9 + ";" + p10 +";" + p11;
+        var str = p1 + ";" + p2 + ";" + p3 + ";" + p4 + ";" + p5 + ";" + p6 + ";" + p7 + ";" + p8 + ";" + p9 + ";" + p10 + ";" + p11 + ";" + p12 + ";" + p13;
 
-    var obj = JSON.stringify({
-        preguntas: str
-    });
+        var obj = JSON.stringify({
+            preguntas: str
+        });
 
-    $.ajax({
-        type: "POST",
-        url: "./RegistrarUsuario.aspx/GuardarUsuarios",
-        data: obj,
-        contentType: 'application/json; charset=utf-8',
-        error: function (xhr, ajaxOptions, thrownError) {
-            console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
-        },
-        success: function (data) {
-            if (data.d) {
-                $("#txtRespuesta1").val("");
-                $("#txtRespuestaConfirmacion1").val("");
-                $("#txtRespuesta2").val("");
-                $("#txtRespuestaConfirmacion2").val("");
+        $.ajax({
+            type: "POST",
+            url: "./RegistrarUsuario.aspx/GuardarUsuarios",
+            data: obj,
+            contentType: 'application/json; charset=utf-8',
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
+            },
+            success: function (data) {
+                if (data.d) {
+                    $("#txtRespuesta1").val("");
+                    $("#txtRespuestaConfirmacion1").val("");
+                    $("#txtRespuesta2").val("");
+                    $("#txtRespuestaConfirmacion2").val("");
 
-                $("#formUsuario").val("");
-                $("#formPrimerNombre").val("");
-                $("#formSegundoNombre").val(""); 
-                $("#formPrimerApellido").val("");
-                $("#formSegundoApellido").val(""); 
-                $("#formTelefono").val("");
-                $("#formEmail").val("");
-                $("#formfield3").val("");
+                    $("#formUsuario").val("");
+                    $("#formPrimerNombre").val("");
+                    $("#formSegundoNombre").val("");
+                    $("#formPrimerApellido").val("");
+                    $("#formSegundoApellido").val("");
+                    $("#formTelefono").val("");
+                    $("#formEmail").val("");
+                    $("#formfield3").val("");
 
-                MensajeCorrecto(data.d);
-                ListaUsuario();
-                $('.nav-tabs a[href="#Lista"]').tab('show');
-            } else {
-                MensajeIncorrecto(data.d);
+                    MensajeCorrecto(data.d);
+                    ListaUsuario();
+                    $('.nav-tabs a[href="#Lista"]').tab('show');
+                } else {
+                    MensajeIncorrecto(data.d);
+                }
             }
-        }
-    });
-
+        });
+    }
+    else {
+        alerta("Las contraseñas no coinciden");
+    }
 }
+
+*/
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+function guardarUsuario() {
+    if ($("#formfield3").val() == $("#formfield4").val()) {
+        var contraseña = $("#formfield3").val();
+        // Verificar la fortaleza de la contraseña
+        var fortalezaValida = verificarFortalezaContraseña(contraseña);
+
+        if (!fortalezaValida) {
+            return; // Si la contraseña es débil, detener el proceso
+        }
+
+        var res = "";
+        var p1 = $("#formSeleccionUsuario").val();
+        var p2 = $("#formPrimerNombre").val();
+        var p3 = $("#formSegundoNombre").val();
+        var p4 = $("#formPrimerApellido").val();
+        var p5 = $("#formSegundoApellido").val();
+        var p6 = $("#formTelefono").val();
+        var p7 = $("#formEmailDominio").val();
+        var p8 = contraseña; // Utilizamos la contraseña verificada
+        var p9 = $("#formCompania").val();
+        // var p10 = $("#formDepartamento").val();
+        var comboDepartamento = document.getElementById("formDepartamento");
+        var p10 = comboDepartamento.options[comboDepartamento.selectedIndex].text;
+        var p11 = $("#formTitulo").val();
+        var p12 = contraseña; // Utilizamos la contraseña verificada
+        var p13 = $("#formfield4").val();
+
+        var str = p1 + ";" + p2 + ";" + p3 + ";" + p4 + ";" + p5 + ";" + p6 + ";" + p7 + ";" + p8 + ";" + p9 + ";" + p10 + ";" + p11 + ";" + p12 + ";" + p13;
+
+        var obj = JSON.stringify({
+            preguntas: str
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "./RegistrarUsuario.aspx/GuardarUsuarios",
+            data: obj,
+            contentType: 'application/json; charset=utf-8',
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
+            },
+            success: function (data) {
+                if (data.d) {
+                    $("#txtRespuesta1").val("");
+                    $("#txtRespuestaConfirmacion1").val("");
+                    $("#txtRespuesta2").val("");
+                    $("#txtRespuestaConfirmacion2").val("");
+
+                    $("#formUsuario").val("");
+                    $("#formPrimerNombre").val("");
+                    $("#formSegundoNombre").val("");
+                    $("#formPrimerApellido").val("");
+                    $("#formSegundoApellido").val("");
+                    $("#formTelefono").val("");
+                    $("#formEmail").val("");
+                    $("#formfield3").val("");
+
+                    MensajeCorrecto(data.d);
+                    ListaUsuario();
+                    $('.nav-tabs a[href="#Lista"]').tab('show');
+                } else {
+                    MensajeIncorrecto(data.d);
+                }
+            }
+        });
+    } else {
+        alerta("Las contraseñas no coinciden");
+    }
+}
+
+function verificarFortalezaContraseña(contraseña) {
+    // Verifica si la contraseña tiene al menos una mayúscula
+    var tieneMayuscula = /[A-Z]/.test(contraseña);
+
+    // Verifica si la contraseña tiene al menos un número
+    var tieneNumero = /\d/.test(contraseña);
+
+    // Verifica si la contraseña tiene al menos uno de los signos (.,*/+)
+    var tieneSigno = /[.-,*/+]/.test(contraseña);
+
+    // Verifica longitud mínima de la contraseña (puedes cambiar este valor según tus requisitos)
+    var longitudCorrecta = contraseña.length >= 8; // Mínimo 8 caracteres
+
+    if (!tieneMayuscula || !tieneNumero || !tieneSigno || !longitudCorrecta) {
+         Muestra la advertencia
+        var advertencia = "La contraseña es débil. Debe contener al menos:";
+        if (!tieneMayuscula) advertencia += " una mayúscula,";
+        if (!tieneNumero) advertencia += " un número,";
+        if (!tieneSigno) advertencia += " uno de los signos (.-,*/+),";
+        if (!longitudCorrecta) advertencia += " 8 caracteres como mínimo.";
+
+        alert(advertencia);
+        return false; // La contraseña no cumple con los requisitos
+    }
+
+    return true; // La contraseña cumple con los requisitos
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
 
 function actualizarUnidad(datos) {
 
@@ -602,6 +721,7 @@ function CargarUnidad() {
             if (data.d) {
 
                 RecorreJSONSelect("#IdPreguentas1", datos);   
+                RecorreJSONSelect("#formDepartamento", datos);  
             }
         }
     });
@@ -613,13 +733,13 @@ function CargarUnidad() {
     function combinarNombres() {
         // Obtener los valores de los campos de nombre y apellido
     let valorDominio = $("#ContentPlaceHolder1_TextBox1").val();
-    var nombre1 = $("#formPrimerNombre").val().toLowerCase();
-    var nombre2 = $("#formSegundoNombre").val().toLowerCase();
-    var apellido1 = $("#formPrimerApellido").val().toLowerCase();
-    var apellido2 = $("#formSegundoApellido").val().toLowerCase();
+    let nombre1 = $("#formPrimerNombre").val().toLowerCase();
+    let nombre2 = $("#formSegundoNombre").val().toLowerCase();
+    let apellido1 = $("#formPrimerApellido").val().toLowerCase();
+    let apellido2 = $("#formSegundoApellido").val().toLowerCase();
     
-    var primerasDosLetrasNombre = nombre1.substring(0, 3);
-    var numeroAleatorio = Math.floor(Math.random() * 99) + 1;
+    let primerasDosLetrasNombre = nombre1.substring(0, 3);
+    let numeroAleatorio = Math.floor(Math.random() * 99) + 1;
     //var signos = ['/', '*', '-', '.'];
     //var signoAleatorio = signos[Math.floor(Math.random() * signos.length)];
     // Combinar las letras, números y signos obtenidos

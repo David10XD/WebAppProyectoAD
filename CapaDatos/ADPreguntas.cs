@@ -21,7 +21,6 @@ namespace CapaDatos
             String respuestaSP = "";
             SqlCommand cmd = null;
             SqlDataReader dr = null;
-
             try
             {
                 CapaConexion.Conexion cn = new CapaConexion.Conexion();

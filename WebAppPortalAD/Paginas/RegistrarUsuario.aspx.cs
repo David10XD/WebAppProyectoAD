@@ -58,6 +58,8 @@ namespace WebAppPortalAD.Paginas
             string datos = null;
             try
             {
+                string[] words = preguntas.ToString().Split(';');
+
                 ActualizarCuentaAD GuardarUsuario = new ActualizarCuentaAD();
                 datos = GuardarUsuario.GenerarUsuarios(ConfigurationManager.AppSettings["server"].ToString(), ConfigurationManager.AppSettings["dominio"].ToString(), HttpContext.Current.Session["usuarioPro"].ToString(), HttpContext.Current.Session["clave"].ToString(), preguntas, ConfigurationManager.AppSettings["carpeta"].ToString());
             
@@ -67,7 +69,7 @@ namespace WebAppPortalAD.Paginas
                 datos = ex.Message.ToString();
                 throw ex;
             }
-
+          
             return datos;
         }
         #endregion

@@ -20,21 +20,20 @@
                 <asp:TextBox ID="TextBox1" runat="server" Text="" CssClass="form-control" Width="0px" Height="0px" BorderWidth="0px"></asp:TextBox>
             </div>
             <div class="tabbable" id="Principal" style="display: block">
-                <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab3">
-                    <li id="tab1" class="active">
-                        <a data-toggle="tab" href="#Lista">Lista de Usuarios</a>
-                    </li>
-                    <li id="tab2" style="display: none">
-                        <a data-toggle="tab" href="#Registro">Registro de Usuarios</a>
-                    </li>
-                    <li id="tab3">
-                        <a data-toggle="tab" href="#Actualiza">Actualizar  Usuarios</a>
-                    </li>
-                    <li id="tab4" style="display: none">
-                        <a data-toggle="tab" href="#Unidad">Unidad Organizativa</a>
-                    </li>
-                </ul>
-
+                 <ul class="nav nav-tabs padding-12 tab-color-blue background-blue" id="myTab3">
+                     <li id="tab1" class="active">
+                         <a data-toggle="tab" href="#Lista">Lista de Usuarios</a>
+                     </li>
+                     <li id="tab2" style="display: none">
+                         <a data-toggle="tab" href="#Registro">Registro de Usuarios</a>
+                     </li>
+                     <li id="tab3">
+                         <a data-toggle="tab" href="#Actualiza">Actualizar  Usuarios</a>
+                     </li>
+                     <li id="tab4" style="display: none">
+                         <a data-toggle="tab" href="#Unidad">Unidad Organizativa</a>
+                     </li>
+                 </ul>
                 <div class="tab-content">
                     <div id="Lista" class="tab-pane in active">
                         <div class="row" style="display: none" id="combo">
@@ -137,7 +136,10 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right" for="form-field-1">Departamento</label>
                                 <div class="col-sm-9">
-                                    <input type="text" id="formDepartamento" placeholder="Departamento" class="col-xs-10 col-sm-5" />
+                                    <!--<input type="text" id="formDepartamento" placeholder="Departamento" class="col-xs-10 col-sm-5" />-->
+                                     <select id="formDepartamento" class="col-xs-5 col-sm-2">
+                                        <option value="0">Seleccione el departamento</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -296,7 +298,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
-    <script src="../Estilos/js/Usuario.js?v=30"></script>
+    <script src="../Estilos/js/Usuario.js?v=55"></script>
 </asp:Content>
 
 
